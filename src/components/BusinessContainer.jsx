@@ -1,5 +1,7 @@
-import React from 'react';
+'use client'
+import React, { useState } from 'react';
 import BusinessCard from './BusinessCard'; // Import your BusinessCard component here
+import SectionBox from './SectionBox';
 
 const businesses = [
     {
@@ -44,16 +46,93 @@ const businesses = [
         name: 'HIJ Industries',
         city: 'Houston',
     },
+    {
+        id: 7,
+        thumbnail: 'https://images.pexels.com/photos/860227/pexels-photo-860227.jpeg?auto=compress&cs=tinysrgb&w=1600',
+        owner: 'Emily Davis',
+        name: 'LMN Co.',
+        city: 'San Francisco',
+    },
+    {
+        id: 8,
+        thumbnail: 'https://images.pexels.com/photos/2887207/pexels-photo-2887207.jpeg?auto=compress&cs=tinysrgb&w=1600',
+        owner: 'Sarah Brown',
+        name: 'HIJ Industries',
+        city: 'Houston',
+    },
 ];
 
 const BusinessContainer = () => {
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [searchTerm, setSearchTerm] = useState('');
+
+    // Function to filter businesses based on selected category and search term
+    const filteredBusinesses = businesses.filter((business) => {
+        // Filter by category
+        if (selectedCategory !== 'All' && business.category !== selectedCategory) {
+            return false;
+        }
+        // Filter by search term (you can modify this to search in more fields)
+        return business.name.toLowerCase().includes(searchTerm.toLowerCase());
+    });
+
+    // Function to handle category selection
+    const handleCategorySelect = (category) => {
+        setSelectedCategory(category);
+    };
+
+    // Function to handle search input
+    const handleSearchInput = (event) => {
+        setSearchTerm(event.target.value);
+    };
+
     return (
-        <div className="container max-w-[1200px] w-full px-5 mx-auto py-20">
-            <h1 className=' font-bold py-10 text-3xl'>Find Business</h1>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-                {businesses.map((business) => (
-                    <BusinessCard key={business.id} data={business} />
-                ))}
+        <div className="second-bg">
+            <div className="container max-w-[1300px] w-full px-5 mx-auto py-20">
+                <SectionBox
+                    title="Find Business"
+                    description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
+                />
+                <div className='mb-5 border-b flex justify-between items-center p-3'>
+                    <div>
+                        <button
+                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'All' ? 'bg-blue-500 text-white' : 'bg-white'
+                                }`}
+                            onClick={() => handleCategorySelect('All')}
+                        >
+                            All
+                        </button>
+                        {/* Add buttons for other categories */}
+                        <button
+                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'Category1' ? 'bg-blue-500 text-white' : 'bg-white'
+                                }`}
+                            onClick={() => handleCategorySelect('Category1')}
+                        >
+                            Category1
+                        </button>
+                        <button
+                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'Category2' ? 'bg-blue-500 text-white' : 'bg-white'
+                                }`}
+                            onClick={() => handleCategorySelect('Category2')}
+                        >
+                            Category2
+                        </button>
+                    </div>
+                    <div>
+                        <input
+                            type="text"
+                            placeholder="Search by name..."
+                            className="w-full border p-2 rounded-md text-sm outline-none"
+                            value={searchTerm}
+                            onChange={handleSearchInput}
+                        />
+                    </div>
+                </div>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                    {filteredBusinesses.map((business) => (
+                        <BusinessCard key={business.id} data={business} />
+                    ))}
+                </div>
             </div>
         </div>
     );
