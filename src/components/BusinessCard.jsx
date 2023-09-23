@@ -2,7 +2,7 @@ import React from 'react';
 import { FaStar } from 'react-icons/fa';
 
 const BusinessCard = ({ data }) => {
-    const { thumbnail, owner, name, city } = data;
+    const { thumbnail, name, city } = data;
 
     return (
         <div className="w-full h-full rounded-lg flex flex-col gap-5">

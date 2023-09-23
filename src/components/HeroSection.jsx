@@ -4,11 +4,11 @@ import { FaSearch } from 'react-icons/fa';
 const HeroSection = () => {
     return (
         <section className="hero relative min-h-[800px] flex flex-col items-center justify-center">
-            <div className='container px-5 mx-auto text-center py-16 flex flex-col gap-10'>
-                <h1 className="text-4xl md:text-6xl font-bold leading-tight">
+            <div className='container z-10 px-5 mx-auto text-center py-16 flex flex-col gap-10'>
+                <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
                     Take Your <span className="text-red-500">Business</span> Next Level
                 </h1>
-                <p className="text-lg md:text-xl mb-8 text-gray-400">
+                <p className="text-lg md:text-xl mb-8 text-gray-200">
                     Explore the world with stunning views and unforgettable experiences.
                 </p>
                 <form className="mx-auto flex flex-col md:flex-row gap-5 justify-center  items-start md:items-center p-5 bg-white text-gray-700 rounded-lg w-fit border">
@@ -58,6 +58,7 @@ const HeroSection = () => {
                     </button>
                 </form>
             </div>
+            <div className=' absolute inset-0 bg-black bg-opacity-70 z-0'></div>
         </section >
     );
 };
