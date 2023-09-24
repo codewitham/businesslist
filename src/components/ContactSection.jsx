@@ -3,7 +3,7 @@ import SectionBox from './SectionBox';
 
 const ContactSection = () => {
     return (
-        <section className=" py-16 second-bg">
+        <section className=" py-16 second-bg px-5">
             <SectionBox title={"Contact Us"} description={"Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis, ullam sunt ex, ratione voluptates. Necessitatibus neque odit cum saepe sit aspernatur!"} />
             <div className="container max-w-[1200px] mx-auto flex flex-col md:flex-row justify-center gap-5 bg-white rounded-md overflow-hidden shadow-lg" >
                 <div className="md:w-1/2 py-14 px-8 relative text-white bg-black">
