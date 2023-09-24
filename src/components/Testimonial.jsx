@@ -56,13 +56,20 @@ const Testimonial = () => {
     };
 
     return (
-        <div className=" second-bg overflow-hidden p-5">
-            <div className="container mx-auto max-w-[1200px] py-20 px-5 ">
-                <SectionBox title={"What Our Users Say"} description={"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."} />
+        <div className="relative second-bg overflow-hidden p-5 testimonial-bg">
+            {/* Semi-transparent overlay */}
+            <div className="absolute inset-0 bg-black bg-opacity-70 z-0"></div>
+            <div className="container mx-auto max-w-[1200px] py-20 px-5 relative z-10">
+                <SectionBox
+                    title={"What Our Users Say"}
+                />
+                <p className="text-white text-center max-w-xl mx-auto mb-10">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud.
+                </p>
                 <Slider {...settings}>
                     {testimonials.map((testimonial) => (
                         <div key={testimonial.id}>
-                            <div className=" p-7 flex flex-col justify-center m-5 rounded-xl border border-gray-200 bg-white">
+                            <div className="p-7 flex flex-col justify-center m-5 rounded-xl border border-gray-200 bg-white">
                                 <p className="text-gray-500 mb-5">{testimonial.text}</p>
                                 <div className="flex items-center ">
                                     <img

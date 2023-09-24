@@ -12,14 +12,36 @@
     background-size: cover;
 }
 
+.testimonial-bg {
+    position: relative;
+    background-image: url("https://images.pexels.com/photos/378570/pexels-photo-378570.jpeg?auto=compress&cs=tinysrgb&w=1600");
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+}
+
 .second-bg {
     @apply bg-[#f6f4ff]
 }
 
-.slick-prev:before {
-    color: red;
+.slick-dots li.slick-active button:before {
+    opacity: 1;
+    color: #fff;
 }
 
-.slick-next:before {
-    color: red;
+.slick-dots li button:before {
+    font-family: 'slick';
+    font-size: 6px;
+    line-height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    content: '•';
+    text-align: center;
+    opacity: .60;
+    color: white;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }

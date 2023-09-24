@@ -2,19 +2,22 @@ import React from 'react';
 import { FaAngleRight, FaHeart, FaLocationArrow, FaStar } from 'react-icons/fa';
 
 const BusinessCard = ({ data }) => {
-    const { thumbnail, name, city } = data;
+    const { thumbnail, name, category } = data;
 
     return (
         <div className="w-full h-full rounded-lg flex flex-col bg-white overflow-hidden border">
-            <div className=' relative bg-black h-[200px]'>
+            <div className=' relative bg-black h-[230px]'>
                 <img
                     className="w-full h-full object-cover opacity-70"
                     src={thumbnail}
                     alt="Business Owner"
                 />
                 <div className=' absolute bottom-0 left-0 w-full flex items-center justify-between py-3 px-2'>
-                    <button className=' text-red-500 rounded-full p-2 bg-black bg-opacity-60'><FaHeart /></button>
+                    <button className=' text-white rounded-full p-2 bg-black bg-opacity-80'><FaHeart /></button>
                     <Ratings />
+                </div>
+                <div className=' absolute top-0 left-0 bg-green-600 text-white p-2 uppercase text-sm'>
+                    {category}
                 </div>
             </div>
 

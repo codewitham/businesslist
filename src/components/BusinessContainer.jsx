@@ -10,6 +10,7 @@ const businesses = [
         owner: 'John Doe',
         name: 'ABC Corporation',
         city: 'New York',
+        category: "Hotel"
     },
     {
         id: 2,
@@ -17,6 +18,8 @@ const businesses = [
         owner: 'Jane Smith',
         name: 'XYZ Enterprises',
         city: 'Los Angeles',
+        category: "It Services"
+
     },
     {
         id: 3,
@@ -24,6 +27,8 @@ const businesses = [
         owner: 'Robert Johnson',
         name: 'PQR Inc.',
         city: 'Chicago',
+        category: "Business Consultant"
+
     },
     {
         id: 4,
@@ -31,6 +36,8 @@ const businesses = [
         owner: 'Emily Davis',
         name: 'LMN Co.',
         city: 'San Francisco',
+        category: "Hotel"
+
     },
     {
         id: 5,
@@ -38,6 +45,7 @@ const businesses = [
         owner: 'Michael Wilson',
         name: 'EFG Ltd.',
         city: 'Miami',
+        category: "Hotel"
     },
     {
         id: 6,
@@ -45,6 +53,7 @@ const businesses = [
         owner: 'Sarah Brown',
         name: 'HIJ Industries',
         city: 'Houston',
+        category: "Hotel"
     },
     {
         id: 7,
@@ -52,6 +61,7 @@ const businesses = [
         owner: 'Emily Davis',
         name: 'LMN Co.',
         city: 'San Francisco',
+        category: "Hotel"
     },
     {
         id: 8,
@@ -59,6 +69,7 @@ const businesses = [
         owner: 'Sarah Brown',
         name: 'HIJ Industries',
         city: 'Houston',
+        category: "Hotel"
     },
 ];
 
@@ -93,7 +104,7 @@ const BusinessContainer = () => {
                     title="Find Business"
                     description="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud."
                 />
-                <div className='mb-5 border-b flex justify-between items-center p-3'>
+                <div className='mb-5 border-b flex justify-between items-center p-3 text-sm'>
                     <div>
                         <button
                             className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'All' ? 'bg-blue-500 text-white' : 'bg-white'
@@ -104,14 +115,14 @@ const BusinessContainer = () => {
                         </button>
                         {/* Add buttons for other categories */}
                         <button
-                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'Category1' ? 'bg-blue-500 text-white' : 'bg-white'
+                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'Hotel' ? 'bg-blue-500 text-white' : 'bg-white'
                                 }`}
                             onClick={() => handleCategorySelect('Category1')}
                         >
                             Category1
                         </button>
                         <button
-                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'Category2' ? 'bg-blue-500 text-white' : 'bg-white'
+                            className={`mr-2 px-3 py-1 rounded-md ${selectedCategory === 'IT SERVICES' ? 'bg-blue-500 text-white' : 'bg-white'
                                 }`}
                             onClick={() => handleCategorySelect('Category2')}
                         >
@@ -128,7 +139,7 @@ const BusinessContainer = () => {
                         />
                     </div>
                 </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
+                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-x-6 gap-y-8">
                     {filteredBusinesses.map((business) => (
                         <BusinessCard key={business.id} data={business} />
                     ))}

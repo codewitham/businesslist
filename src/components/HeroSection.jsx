@@ -3,7 +3,7 @@ import { FaSearch } from 'react-icons/fa';
 
 const HeroSection = () => {
     return (
-        <section className="hero relative min-h-[800px] flex flex-col items-center justify-center">
+        <section className="hero relative min-h-screen flex flex-col items-center justify-center">
             <div className='container z-10 px-5 mx-auto text-center py-16 flex flex-col gap-10'>
                 <h1 className="text-4xl md:text-6xl font-bold leading-tight text-white">
                     Take Your <span className="text-red-500">Business</span> Next Level
@@ -62,5 +62,9 @@ const HeroSection = () => {
         </section >
     );
 };
+
+const Features = () => {
+    return <div></div>
+}
 
 export default HeroSection;
