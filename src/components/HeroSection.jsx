@@ -1,5 +1,6 @@
 import React from 'react';
 import { FaSearch } from 'react-icons/fa';
+import FeaturesSection from './FeaturesSection';
 
 const HeroSection = () => {
     return (
@@ -58,6 +59,7 @@ const HeroSection = () => {
                         <FaSearch />
                     </button>
                 </form>
+                <FeaturesSection />
             </div>
             <div className=' absolute inset-0 bg-black bg-opacity-[0.88] z-0'></div>
         </section >

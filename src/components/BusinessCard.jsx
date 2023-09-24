@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import React from 'react';
 import { FaAngleRight, FaHeart, FaLocationArrow, FaStar } from 'react-icons/fa';
 
@@ -33,9 +34,9 @@ const BusinessCard = ({ data }) => {
                     <FaLocationArrow className='mr-2 inline-block text-red-400' />
                     12/a, New
                 </div>
-                <button className=' bg-transparent p-2 rounded-lg text-green-500 flex items-center gap-2'>
+                <Link href={"/business/1"} className=' bg-transparent p-2 rounded-lg text-green-500 flex items-center gap-2'>
                     Open now <FaAngleRight />
-                </button>
+                </Link>
             </div>
         </div>
     );
